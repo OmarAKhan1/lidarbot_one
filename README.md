@@ -3,17 +3,20 @@
 This repository enables you to generate maps using **SLAM** with a **LiDAR connected to an ESP32-S3**. The system communicates with a host computer via **micro-ROS**, and mapping is performed using the **slam_toolbox** package in ROS2.
 
 ---
+
 ## 🎥 Demo
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=CTjxbQaAXSU">
-    <img src="https://img.youtube.com/vi/CTjxbQaAXSU/0.jpg" alt="LiDAR SLAM Demo">
+    <img src="https://img.youtube.com/vi/CTjxbQaAXSU/0.jpg" alt="LiDAR SLAM Demo" width="650">
   </a>
 </p>
 
 <p align="center">
   Click the image above to watch a quick demo
 </p>
+
+---
 
 ## 🚀 Overview
 
@@ -37,23 +40,25 @@ This repository enables you to generate maps using **SLAM** with a **LiDAR conne
 
 Before running the project, make sure you have the following installed:
 
-1. ROS2 *(tested using ROS2 Kilted Kaiju)*
-2. micro-ROS
-3. slam_toolbox
-4. Arduino IDE (or equivalent, for uploading code to ESP32)
+* ROS2 *(tested using ROS2 Kilted Kaiju)*
+* micro-ROS
+* slam_toolbox
+* Arduino IDE (or equivalent, for uploading code to ESP32)
 
 ---
 
 ## ⚡ Setup Instructions
 
 ### 1. Upload Code to ESP32
+
 Upload the following file to your ESP32-S3:
 
-[esp32_SLAM.ino](./esp32_SLAM.ino)
+👉 [esp32_SLAM.ino](./esp32_SLAM.ino)
 
-Must install the following libraies for it to run successfully:
+Must install the following libraries for it to run successfully:
+
 1. KAIA.ai library for LD14P LiDAR
-2. FT&WS library for SCServo  
+2. FT&WS library for SCServo
 
 ---
 
@@ -61,25 +66,35 @@ Must install the following libraies for it to run successfully:
 
 After powering the ESP32-S3, open multiple terminals in your ROS2 workspace and run the following commands:
 
-### Terminal 1: Start micro-ROS agent
+#### Terminal 1 — Start micro-ROS agent
 
+```bash
 ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888
+```
 
-### Terminal 2: Launch robot
+#### Terminal 2 — Launch robot
 
+```bash
 ros2 launch lidarbot_one launch_robot.launch.py
+```
 
-### Terminal 3: Start RViz
+#### Terminal 3 — Start RViz
 
+```bash
 rviz2
+```
 
-### Terminal 4: Start SLAM
+#### Terminal 4 — Start SLAM
 
+```bash
 ros2 launch lidarbot_one online_async_launch.py use_sim_time:=false
+```
 
-### Terminal 5: Teleoperation
+#### Terminal 5 — Teleoperation
 
+```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
+```
 
 ---
 
@@ -112,4 +127,3 @@ These are intended for running the robot in **Gazebo Sim** for testing and simul
 
 * Make sure to update odometry parameters in [my_controllers.yaml](./my_controllers.yaml) and [robot_core.xacro](./robot_core.xacro) to match your specific robot
 * Double-check if LiDAR is spinning in the right direction. This repo was made for LiDARs that are spinning in the clockwise direction. Edit the [esp32_SLAM.ino](./esp32_SLAM.ino) file in order to work with LiDARs that are spinning in the counter-clockwise direction.
-
