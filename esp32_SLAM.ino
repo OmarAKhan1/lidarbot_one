@@ -14,9 +14,9 @@
 #include <LDS_LDROBOT_LD14P.h>
 
 // ── WiFi ──────────────────────────────────────────────────────────────────────
-char ssid[]         = "OmarTest";
-char password[]     = "RamCam211";
-char agent_ip[]     = "10.42.0.1";
+char ssid[]         = "SSID";  //Put your laptop's WIFI's SSID
+char password[]     = "PASS";  //Put your laptop's WIFI's password
+char agent_ip[]     = "0.0.0.0"; //Put your laptop's IP address
 uint32_t agent_port = 8888;
 
 // ── Servo UART (Serial1) ──────────────────────────────────────────────────────
