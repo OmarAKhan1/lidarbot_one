@@ -3,6 +3,17 @@
 This repository enables you to generate maps using **SLAM** with a **LiDAR connected to an ESP32-S3**. The system communicates with a host computer via **micro-ROS**, and mapping is performed using the **slam_toolbox** package in ROS2.
 
 ---
+## 🎥 Demo
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=CTjxbQaAXSU">
+    <img src="https://img.youtube.com/vi/CTjxbQaAXSU/0.jpg" alt="LiDAR SLAM Demo">
+  </a>
+</p>
+
+<p align="center">
+  Click the image above to watch a quick demo
+</p>
 
 ## 🚀 Overview
 
