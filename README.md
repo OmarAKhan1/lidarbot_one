@@ -2,8 +2,6 @@
 
 This repository enables you to generate maps using **SLAM** with a **LiDAR connected to an ESP32-S3**. The system communicates with a host computer via **micro-ROS**, and mapping is performed using the **slam_toolbox** package in ROS2.
 
-This project is branched from Josh Newan's **articubot_one** robot (check it out if you're interested in doing something similar with a Raspberry Pi instead of an ESP32).
-
 ---
 
 ## 🚀 Overview
@@ -40,7 +38,7 @@ Before running the project, make sure you have the following installed:
 ### 1. Upload Code to ESP32
 Upload the following file to your ESP32-S3:
 
-esp32_SLAM.ino
+[esp32_SLAM.ino](./esp32_SLAM.ino)
 
 Must install the following libraies for it to run successfully:
 1. KAIA.ai library for LD14P LiDAR
