@@ -99,6 +99,6 @@ These are intended for running the robot in **Gazebo Sim** for testing and simul
 
 ## 📬 Notes
 
-* Make sure all devices are on the same network if required
-* Double-check topic remappings if things don’t move or visualize correctly
-* Ensure correct serial/UDP configuration for micro-ROS
+* Make sure to update odometry parameters in [my_controllers.yaml](./my_controllers.yaml) and [robot_core.xacro](./robot_core.xacro) to match your specific robot
+* Double-check if LiDAR is spinning in the right direction. This repo was made for LiDARs that are spinning in the clockwise direction. Edit the [esp32_SLAM.ino](./esp32_SLAM.ino) file in order to work with LiDARs that are spinning in the counter-clockwise direction.
+
