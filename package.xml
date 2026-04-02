@@ -9,10 +9,21 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- existing deps (add any you already had) -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+
+  <!-- new deps for the hardware interface plugin -->
+  <depend>hardware_interface</depend>
+  <depend>pluginlib</depend>
+
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
+    <!-- this is what lets ros2_control find your plugin -->
+    <hardware_interface plugin="${prefix}/lidarbot_one_hardware.xml"/>
   </export>
 </package>

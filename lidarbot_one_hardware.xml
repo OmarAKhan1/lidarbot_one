@@ -1,0 +1,9 @@
+<library path="lidarbot_one">
+  <class name="lidarbot_one/MicroRosHardware"
+         type="lidarbot_one::MicroRosHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      micro-ROS WiFi hardware interface for ST3215 differential drive
+    </description>
+  </class>
+</library>
